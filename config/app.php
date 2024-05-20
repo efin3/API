@@ -184,6 +184,11 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         // Chumper\Zipper\ZipperServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+
+        /*
+         * Custom Service Providers...
+         */
+        App\Providers\GameTopicRegisterProvider::class,
     ],
 
     /*
