@@ -6,6 +6,7 @@ use EscolaLms\TopicTypes\Events\TopicTypeChanged;
 use EscolaLms\TopicTypes\Facades\Markdown;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
+use EscolaLms\TopicTypes\Models\TopicContent\AbstractTopicContent;
 
 /**
  * @OA\Schema(
@@ -34,7 +35,7 @@ class GameTopic extends AbstractTopicContent
 {
     use HasFactory;
 
-    public $table = 'topic_gametopic';
+    public $table = 'topic_game';
 
     public static function rules(): array
     {
@@ -45,7 +46,7 @@ class GameTopic extends AbstractTopicContent
 
     protected static function newFactory()
     {
-        return \EscolaLms\TopicTypes\Database\Factories\TopicContent\GameTopicFactory::new();
+        return App\Models\TopicContent\factories\GameTopicFactory::new();
     }
 
     public function fixAssetPaths(): array
